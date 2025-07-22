@@ -1,0 +1,158 @@
+{% extends 'basetemplate.html' %} {# ตรวจสอบให้แน่ใจว่าชื่อไฟล์ base template ของคุณถูกต้อง #}
+
+{% block title %}เกี่ยวกับฉัน{% endblock %} {# ชื่อเฉพาะสำหรับหน้านี้ #}
+
+{% block content %}
+    {# สไตล์เพิ่มเติมสำหรับหน้านี้โดยเฉพาะในธีมสีเขียว #}
+    <style>
+        body {
+            background-color: #f0fff0; /* เขียวอ่อนมากสำหรับพื้นหลัง */
+        }
+        .about-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .about-section h1 {
+            color: #28a745; /* สีเขียวเข้มสำหรับหัวข้อหลัก */
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(40, 167, 69, 0.2); /* เงาสีเขียวอ่อน */
+        }
+        .profile-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 7px solid #3CB371; /* สีเขียวกลางสำหรับขอบรูป */
+            box-shadow: 0 10px 25px rgba(0, 128, 0, 0.2); /* เงาสีเขียว */
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+        .profile-photo:hover {
+            transform: scale(1.08) rotate(3deg); /* หมุนเล็กน้อยเมื่อ hover */
+            border-color: #66BB6A; /* สีเขียวอ่อนลงเมื่อ hover */
+        }
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #333; /* สีข้อความเข้ม */
+            background-color: #ffffff; /* พื้นหลังสีขาวสำหรับเนื้อหา */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .about-text h2 {
+            color: #2E8B57; /* สีเขียวป่าสำหรับหัวข้อรอง */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            border-bottom: 3px solid #D4EDDA; /* เส้นขอบสีเขียวอ่อนมาก */
+            padding-bottom: 15px;
+            position: relative; /* สำหรับ icon */
+        }
+        .about-text h2 i {
+            color: #66BB6A; /* สีไอคอนเขียวอ่อน */
+            margin-right: 10px;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px; /* เพิ่มระยะห่าง */
+            margin-top: 25px;
+        }
+        .skills-list li {
+            background-color: #e8f5e9; /* เขียวอ่อนมากสำหรับ tag */
+            color: #1b5e20; /* เขียวเข้มสำหรับข้อความ tag */
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            border: 1px solid #c8e6c9;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .skills-list li:hover {
+            background-color: #d4edda; /* เขียวเข้มขึ้นเมื่อ hover */
+            transform: translateY(-2px); /* ยกขึ้นเล็กน้อย */
+        }
+        .contact-info {
+            margin-top: 50px;
+            font-size: 1.15rem;
+            color: #555;
+            background-color: #f7fcf7; /* พื้นหลังอ่อนๆ สำหรับส่วนติดต่อ */
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px dashed #c8e6c9; /* เส้นประ */
+        }
+        .contact-info a {
+            color: #007bff; /* ใช้สีน้ำเงินเดิมสำหรับลิงก์เพื่อความชัดเจน */
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        .contact-info a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+    <div class="about-section animate__animated animate__fadeIn">
+        <h1 class="animate__animated animate__fadeInDown">
+            <i class="bi bi-person-badge-fill me-3"></i> เกี่ยวกับ <span style="color: #66BB6A;">โอ๊ต</span>
+        </h1>
+
+        {# เพิ่ม {% load static %} ที่นี่ ถ้ายังไม่ได้ทำใน basetemplate หรือต้องการใช้รูปภาพในบล็อกนี้โดยตรง #}
+        {# ถ้าคุณไม่มีรูปโปรไฟล์ ให้ลบบรรทัด img ออกไป #}
+    
+        <div class="about-text animate__animated animate__fadeInUp animate__delay-1-5s">
+            <p>
+                สวัสดีครับ! ผมชื่อ <strong>โอ๊ต</strong> เป็นผู้หลงใหลในการ <strong>[การพัฒนาซอฟต์แวร์และการเรียนรู้สิ่งใหม่ๆ]</strong>
+                ผมเชื่อว่าการเรียนรู้และพัฒนาตัวเองอยู่เสมอคือกุญแจสำคัญสู่ความสำเร็จและความสุขในชีวิต และผมมักจะมองหาความท้าทายใหม่ๆ เพื่อขยายขีดความสามารถของตัวเอง
+            </p>
+
+            <h2><i class="bi bi-gear-fill me-2"></i> ประสบการณ์และความสนใจ</h2>
+            <p>
+                ตลอดเส้นทางการเรียนรู้ ผมได้สั่งสมประสบการณ์ในด้าน <strong>[การพัฒนาเว็บด้วย Django/Python, การจัดการฐานข้อมูล, และการทำความเข้าใจระบบต่างๆ]</strong>
+                และมีความสนใจเป็นพิเศษใน <strong>[การสร้างสรรค์แอปพลิเคชันที่มีประโยชน์และใช้งานง่าย, การเรียนรู้เกี่ยวกับ AI/Machine Learning เบื้องต้น, และการออกกำลังกาย]</strong>
+            </p>
+            <p>
+                ผมมีความสุขกับการแก้ปัญหาที่ซับซ้อน และมักจะใช้เวลาว่างในการสำรวจเทคโนโลยีใหม่ๆ หรือโปรเจกต์โอเพนซอร์สที่น่าสนใจ
+            </p>
+
+            <h2><i class="bi bi-lightbulb-fill me-2"></i> ทักษะ</h2>
+            <ul class="skills-list">
+                <li>Python</li>
+                <li>Django Framework</li>
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>Bootstrap</li>
+                <li>SQL (PostgreSQL/SQLite)</li>
+                <li>Git & GitHub</li>
+                <li>Problem Solving</li>
+                {# เพิ่มทักษะอื่นๆ ที่คุณมี #}
+                <li>Web Development</li>
+                <li>Team Collaboration</li>
+            </ul>
+
+            <h2><i class="bi bi-quote me-2"></i> คติประจำใจ</h2>
+            <p style="font-style: italic; color: #555;">
+                "ไม่มีอะไรเป็นไปไม่ได้ ถ้าเรามีความมุ่งมั่นและพร้อมที่จะเรียนรู้"
+            </p>
+
+            <div class="contact-info animate__animated animate__fadeInUp animate__delay-2s">
+                <h2><i class="bi bi-send-fill me-2"></i> ติดต่อฉัน</h2>
+                <p>
+                    หากมีข้อสงสัย ข้อเสนอแนะ หรือต้องการร่วมงาน สามารถติดต่อผมได้ที่:
+                    <br>
+                    อีเมล: <a href="mailto:oat.dev@example.com">oat.dev@example.com</a>
+                    <br>
+                    ลิงก์อิน: <a href="https://www.linkedin.com/in/your_oat_profile" target="_blank">linkedin.com/in/your_oat_profile</a>
+                    <br>
+                    GitHub: <a href="https://github.com/your_oat_username" target="_blank">github.com/your_oat_username</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

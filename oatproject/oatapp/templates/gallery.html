@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อัลบั้มรูป</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffffff; /* สีพื้นหลังดำ */
+            color: #fff; /* ตัวอักษรสีขาว */
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #111;
+            padding: 15px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ffffff; /* สีลิงก์ฟ้า */
+            font-weight: bold;
+        }
+        h1 {
+            color: #000000; /* สีหัวข้อ */
+            margin-top: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 250px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">หน้าแรก</a>
+        <a href="/about">เกี่ยวกับฉัน</a>
+        <a href="/gallery">อัลบั้มรูป</a>
+    </nav>
+
+    <h1>อัลบั้มรูปภาพส่วนตัว</h1>
+    <div class="gallery">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRuKeJUTjqhhps4SzQJ2t4SujAW6-xQ9VHBg&s" alt="รูปภาพที่ 1">
+        <img src="https://i.pinimg.com/originals/9e/ee/fa/9eeefafc2e86a5a39762b52557710626.jpg" alt="รูปภาพที่ 2">
+        <img src="https://i.pinimg.com/564x/05/30/e0/0530e0a759fc1b0743494849b57941b1.jpg" alt="รูปภาพที่ 3">
+        <img src="https://i.pinimg.com/736x/b2/4c/64/b24c64c35171814f3cb48ffbff70d1a9.jpg" alt="รูปภาพที่ 4">
+    </div>
+</body>
+</html>

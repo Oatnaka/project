@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}หน้าหลัก{% endblock %}</title> {# ตั้งชื่อเริ่มต้นและเติมชื่อเว็บ #}
+
+    {% load static %} {# โหลด static files สำหรับ Django/Python web frameworks #}
+
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/spring_theme.css' %}"> {# ไฟล์ CSS ของเราเองสำหรับธีม Spring #}
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 custom-navbar"> {# เปลี่ยน bg-body-tertiary เป็น bg-light เพื่อให้เข้ากับธีม #}
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{% static 'images/logo.png' %}" alt="Spring Blossom Logo" height="40"> {# เพิ่ม alt และกำหนดความสูง #}
+                <span class="ms-2 fw-bold text-success">WebOat </span> {# เพิ่มข้อความชื่อเว็บ #}
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> {# เปลี่ยน me-auto เป็น ms-auto เพื่อให้เมนูชิดขวา #}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">หน้าหลัก</a> {# เปลี่ยน href="#" เป็น href="/" #}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="{% url 'person' %}">เกี่ยวกับพนักงาน</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">ติดต่อสอบถาม</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">เกี่ยวกับฉัน</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'form' %}">ฟอร์ม</a>
+                    </li>
+                </ul>
+                <form class="d-flex ms-lg-4" role="search"> {# เพิ่มระยะห่างทางซ้ายสำหรับจอใหญ่ #}
+                    <input class="form-control me-2 rounded-pill" type="search" placeholder="ค้นหา..." aria-label="Search"/> {# เพิ่ม rounded-pill #}
+                    <button class="btn btn-outline-success rounded-pill" type="submit">ค้นหา</button> {# เพิ่ม rounded-pill #}
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-4 py-4"> {# ใช้แท็ก main และเพิ่ม margin/padding #}
+        {% block content %}
+        {# เนื้อหาหลักของแต่ละหน้าจะมาปรากฏที่นี่ #}
+        {% endblock %}
+    </main>
+
+    <footer class="footer py-3 bg-light text-center text-muted"> {# เพิ่ม footer #}
+        <div class="container">
+            <p>&copy; 2025 Spring Blossom. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script> {# ใช้ bundle แทน min.js เพื่อรวม Popper.js ด้วย #}
+    {% block extra_js %}
+    {# ใช้บล็อกนี้สำหรับ JavaScript เพิ่มเติมเฉพาะหน้าที่เรียกใช้ #}
+    {% endblock %}
+</body>
+</html>

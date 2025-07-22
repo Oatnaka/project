@@ -1,0 +1,127 @@
+{% extends 'basetemplate.html' %}
+{% block title %} เกี่ยวกับพนักงาน {% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>จำนวนประชากร</title>
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .add-btn {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 8px 16px;
+      background-color: #2196F3;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #e6f7ff;
+    }
+
+    .action-btn {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+    }
+
+    .edit-btn {
+      background-color: #ffc107;
+    }
+
+    .delete-btn {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>จำนวนประชากร</h2>
+
+  <a href="/add" class="add-btn">+ เพิ่มบุคคล</a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ลำดับ</th>
+        <th>ชื่อ-สกุล</th>
+        <th>อายุ</th>
+        <th>วันเกิด</th>
+        <th>การดำเนินการ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>นายสมชาย ใจดี</td>
+        <td>35</td>
+        <td>10 มกราคม 2533</td>
+        <td>
+          <a href="/edit/1" class="action-btn edit-btn">แก้ไข</a>
+          <a href="/delete/1" class="action-btn delete-btn" onclick="return confirm('คุณแน่ใจว่าต้องการลบหรือไม่?');">ลบ</a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>นางสาวพิมพ์ใจ สุขสันต์</td>
+        <td>28</td>
+        <td>5 พฤษภาคม 2539</td>
+        <td>
+          <a href="/edit/2" class="action-btn edit-btn">แก้ไข</a>
+          <a href="/delete/2" class="action-btn delete-btn" onclick="return confirm('คุณแน่ใจว่าต้องการลบหรือไม่?');">ลบ</a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>นายวิทยา ตั้งมั่น</td>
+        <td>42</td>
+        <td>22 สิงหาคม 2526</td>
+        <td>
+          <a href="/edit/3" class="action-btn edit-btn">แก้ไข</a>
+          <a href="/delete/3" class="action-btn delete-btn" onclick="return confirm('คุณแน่ใจว่าต้องการลบหรือไม่?');">ลบ</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
+{% endblock  %}

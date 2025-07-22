@@ -1,0 +1,62 @@
+{% extends 'basetemplate.html' %}
+{% block title %} ยินดีต้อนรับ {% endblock %}
+    
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* สไตล์เพิ่มเติมสำหรับหน้านี้ ถ้ามี */
+        .welcome-section {
+            background-color: #1ef188; /* สีฟ้าอ่อนๆ */
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .welcome-section h1 {
+            color: #c5fad3; /* สีน้ำเงินสดใส */
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .welcome-section p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+        .welcome-image {
+            max-width: 70%; /* ปรับขนาดรูปภาพ */
+            height: auto;
+            border-radius: 50%; /* ทำให้รูปภาพเป็นวงกลม */
+            border: 5px solid #28a745; /* สีขอบเขียว */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px; /* ปุ่มโค้งมน */
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <div class="welcome-section mt-5">
+        <h1 class="animate__animated animate__fadeInDown">
+            <i class="bi bi-people-fill me-3"></i> ยินดีต้อนรับสู่ระบบบริหารจัดการประชากร
+        </h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1-5s">
+            แพลตฟอร์มที่ช่วยให้คุณเข้าถึงและจัดการข้อมูลประชากรได้อย่างมีประสิทธิภาพและง่ายดาย
+            เรามุ่งมั่นที่จะนำเสนอข้อมูลที่ถูกต้องและเป็นประโยชน์เพื่อการวางแผนที่ดีขึ้น
+            </a>
+        </div>
+    </div>
+
+    {# สามารถเพิ่มส่วนอื่นๆ ที่น่าสนใจได้อีก เช่น สรุปสถิติเบื้องต้น, ข่าวสาร, ฯลฯ #}
+
+{% endblock %}
